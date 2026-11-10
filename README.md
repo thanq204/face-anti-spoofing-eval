@@ -8,6 +8,14 @@ https://github.com/user-attachments/assets/84842a19-520e-4eeb-aae9-2bb12d91bd9b
 
 [Cài đặt](#cài-đặt) · [Chạy ứng dụng](#chạy-ứng-dụng) · [Huấn luyện](#huấn-luyện) · [Demo và kết quả](#demo-và-kết-quả)
 
+Bạn có thể xem video và [kết quả đánh giá](#demo-và-kết-quả) ngay trên GitHub. Video dùng khuôn mặt đồ họa minh họa. Nếu trình phát không xuất hiện, mở [bản xem trước GIF](docs/media/demo-preview.gif).
+
+Để kiểm tra API trên máy mới, cài `requirements-local.txt` trong môi trường Python 3.11 rồi chạy lệnh dưới đây từ thư mục gốc. Bộ test gửi ảnh JPEG mẫu qua Flask test client và kiểm tra schema, mã lỗi cùng quyết định theo phiên bằng detector và mô hình giả lập. Bước này không cần webcam, API key hay checkpoint.
+
+```bash
+python -m unittest discover -s tests -p test_api.py -q
+```
+
 ## Kiến trúc
 
 ```mermaid
@@ -59,7 +67,7 @@ python run.py --camera 0 --model web_models/liveness_cam4k.tflite --le web_model
 python web_app.py
 ```
 
-**REST API.** API nghe ở cổng 8000 theo mặc định. Dùng `GET /v1/health` để kiểm tra trạng thái, `GET /openapi.json` để xem hợp đồng và `POST /v1/analyze` để chấm một ảnh JPEG. Có thêm endpoint quản lý phiên nhiều frame. [Hướng dẫn tích hợp](docs/API.md)
+**REST API.** API nghe ở cổng 8000 theo mặc định. Dùng `GET /v1/health` để kiểm tra trạng thái, `GET /openapi.json` để xem hợp đồng và `POST /v1/analyze` để chấm một ảnh JPEG. Có thêm endpoint quản lý phiên nhiều frame. Khi chạy trên localhost, API key là tùy chọn. Khi mở API trên mạng, đặt `ANTISPOOF_API_KEY` trước khi chạy. [Hướng dẫn tích hợp](docs/API.md)
 
 ```powershell
 python api_app.py --model web_models/liveness_cam4k.tflite --labels web_models/labels_cam4k.json
@@ -82,6 +90,8 @@ Ngoài Cam4K, repo có các script chuẩn bị dữ liệu gộp, so sánh Batc
 [Ma trận nhầm lẫn và báo cáo JSON](docs/replay.json)
 
 Lần chạy trên **91 video của đồ án** có **87 clip đủ điều kiện chấm**. Hai checkpoint dùng cùng bộ phát hiện mặt, quy tắc lấy mẫu và ngưỡng 0,5.
+
+![So sánh lỗi chấp nhận giả và từ chối thật theo clip của hai checkpoint](docs/media/replay-comparison.png)
 
 | Checkpoint | Clip giả bị nhận là thật | Clip thật bị nhận là giả | ACER gộp |
 | --- | ---: | ---: | ---: |
