@@ -4,7 +4,7 @@
 
 Hệ thống phát hiện khuôn mặt và phân loại thật/giả từ webcam, video hoặc ảnh gửi qua API. Repo gồm ứng dụng desktop, giao diện web, REST API, mã huấn luyện CNN và bộ đánh giá theo video.
 
-[![Face Anti-Spoofing. Demo đánh giá hai checkpoint trên 91 video.](docs/media/cover.png)](docs/media/face-liveness-demo.mp4)
+https://github.com/user-attachments/assets/84842a19-520e-4eeb-aae9-2bb12d91bd9b
 
 [Cài đặt](#cài-đặt) · [Chạy ứng dụng](#chạy-ứng-dụng) · [Huấn luyện](#huấn-luyện) · [Demo và kết quả](#demo-và-kết-quả)
 
@@ -79,9 +79,7 @@ Ngoài Cam4K, repo có các script chuẩn bị dữ liệu gộp, so sánh Batc
 
 ## Demo và kết quả
 
-[![Video tóm tắt pipeline và so sánh Original với Cam4K](docs/media/demo-preview.gif)](docs/media/face-liveness-demo.mp4)
-
-[Video MP4 19 giây](docs/media/face-liveness-demo.mp4) · [Ma trận nhầm lẫn và báo cáo JSON](docs/replay.json)
+[Ma trận nhầm lẫn và báo cáo JSON](docs/replay.json)
 
 Lần chạy trên **91 video của đồ án** có **87 clip đủ điều kiện chấm**. Hai checkpoint dùng cùng bộ phát hiện mặt, quy tắc lấy mẫu và ngưỡng 0,5.
 
