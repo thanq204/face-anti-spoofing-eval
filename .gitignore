@@ -2,12 +2,21 @@
 /models/
 /reports/
 /artifacts/
+/outputs/
+/deliverables/
+/dataset/
+/dataset_cam4k/
+/videos/
+/video cam4k/
+/.runtime/
+/venv/
 .venv/
 __pycache__/
 *.py[cod]
 .env*
 *.tflite
 *.onnx
+*.caffemodel
 *.h5
 *.hdf5
 *.keras
@@ -32,3 +41,7 @@ __pycache__/
 !/docs/media/cover.png
 !/docs/media/demo-preview.gif
 !/docs/media/face-liveness-demo.mp4
+
+# Pretrained OpenCV face detectors used by the inference and legacy extraction code
+!/face_detector/face_detection_yunet_2023mar.onnx
+!/face_detector/res10_300x300_ssd_iter_140000.caffemodel
