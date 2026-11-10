@@ -27,3 +27,8 @@ __pycache__/
 *.zip
 *.7z
 *.csv
+
+# Generated portfolio media
+!/docs/media/cover.png
+!/docs/media/demo-preview.gif
+!/docs/media/face-liveness-demo.mp4
