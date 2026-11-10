@@ -1,0 +1,106 @@
+{
+  "protocol": {
+    "scope": "descriptive replay; independence from training not established",
+    "sample_fps_target": 2,
+    "max_seconds_per_clip": 12,
+    "real_probability_threshold_exclusive": 0.5,
+    "detector_score_threshold": 0.62,
+    "clip_decision": "mean P(real) over eligible frames"
+  },
+  "video_counts": {
+    "fake": 47,
+    "real": 44
+  },
+  "frame_statuses": {
+    "fake": {
+      "multiple_faces": 134,
+      "scored": 890,
+      "no_face": 67
+    },
+    "real": {
+      "scored": 822,
+      "multiple_faces": 172,
+      "no_face": 13
+    }
+  },
+  "clip_statuses": {
+    "fake": {
+      "no_eligible_face": 1,
+      "scored": 46
+    },
+    "real": {
+      "scored": 41,
+      "no_eligible_face": 3
+    }
+  },
+  "models": {
+    "original": {
+      "frames": {
+        "confusion_matrix_fake_real": [
+          [
+            865,
+            25
+          ],
+          [
+            162,
+            660
+          ]
+        ],
+        "scored": 1712,
+        "pooled_apcer": 0.028089887640449437,
+        "bpcer": 0.19708029197080293,
+        "pooled_acer": 0.11258508980562618
+      },
+      "clips": {
+        "confusion_matrix_fake_real": [
+          [
+            45,
+            1
+          ],
+          [
+            7,
+            34
+          ]
+        ],
+        "scored": 87,
+        "pooled_apcer": 0.021739130434782608,
+        "bpcer": 0.17073170731707318,
+        "pooled_acer": 0.0962354188759279
+      }
+    },
+    "cam4k": {
+      "frames": {
+        "confusion_matrix_fake_real": [
+          [
+            860,
+            30
+          ],
+          [
+            94,
+            728
+          ]
+        ],
+        "scored": 1712,
+        "pooled_apcer": 0.033707865168539325,
+        "bpcer": 0.11435523114355231,
+        "pooled_acer": 0.07403154815604582
+      },
+      "clips": {
+        "confusion_matrix_fake_real": [
+          [
+            45,
+            1
+          ],
+          [
+            4,
+            37
+          ]
+        ],
+        "scored": 87,
+        "pooled_apcer": 0.021739130434782608,
+        "bpcer": 0.0975609756097561,
+        "pooled_acer": 0.059650053022269355
+      }
+    }
+  }
+}
